@@ -1,5 +1,5 @@
-#Co-op IDE
-###Integrantes
+# Co-op IDE
+### Integrantes
 * Alejandra Gómez
 * Juan Camilo Mantilla
 * Sebastián Camilo Reyes
