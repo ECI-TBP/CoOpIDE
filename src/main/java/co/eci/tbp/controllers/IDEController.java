@@ -8,7 +8,7 @@ package co.eci.tbp.controllers;
 import co.eci.tbp.services.IDEException;
 import co.eci.tbp.services.IDEServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Juan Camilo Mantilla
  */
+@Service
 @RestController
 @RequestMapping(value = "/file")
 public class IDEController {

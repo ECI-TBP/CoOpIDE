@@ -8,11 +8,13 @@ package co.eci.tbp.services;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Juan Camilo Mantilla
  */
+@Service
 public class IDEServicesStub implements IDEServices{
 
     private HashMap<String,String> filesMap;
