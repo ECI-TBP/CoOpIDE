@@ -3,12 +3,14 @@ editor.setTheme("ace/theme/dracula");
 editor.session.setMode("ace/mode/java");
 
 function textCapture() {
+    var text = editor.getValue();
     console.log(editor.getValue());
+    stompClient.send("/topic/file", {}, text);
 }
 
-function init(){
-    
-}
+
+
+var stompClient = null; 
 
 var connectAndSubscribe = function () {
         console.info('Connecting to WS...');
