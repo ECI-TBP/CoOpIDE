@@ -6,6 +6,11 @@ function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
     stompClient.send("/topic/file", {}, text);
+    //axios.put('file', text).then(function (response){
+        
+    //}).catch(function (error) {
+    //    alert("error:"+error);
+    //});
 }
 
 

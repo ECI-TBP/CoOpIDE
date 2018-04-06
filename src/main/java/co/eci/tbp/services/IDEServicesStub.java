@@ -63,5 +63,10 @@ public class IDEServicesStub implements IDEServices{
         }
     }
 
+    @Override
+    public String getFile(String filename) {
+        return filesMap.get(filename);
+    }
+
     
 }

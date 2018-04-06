@@ -8,6 +8,8 @@ package co.eci.tbp.controllers;
 import co.eci.tbp.services.IDEException;
 import co.eci.tbp.services.IDEServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +30,10 @@ public class IDEController {
     
     @RequestMapping(method = RequestMethod.GET)
     //Cambiar si es necesario, el cambio se haraí direcamente desde el stub con esta implementacion
-    public void managerFiles(@PathVariable String filename){
-        try{
+    public ResponseEntity<?> managerFiles(){
+        String text = ideServ.getFile("file");
+        return new ResponseEntity<>(text,HttpStatus.ACCEPTED);
+        /**try{
             if(ideServ.getFiles().contains(filename)){
                 ideServ.loadFile(filename);
             }
@@ -39,6 +43,15 @@ public class IDEController {
         }
         catch(IDEException e){
             
+        }**/
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<?> updateText(@PathVariable String text) {
+        
+        ideServ.saveFile("file", text);
+        return new ResponseEntity<>(text,HttpStatus.ACCEPTED);
         }
+
 }
-}
+
