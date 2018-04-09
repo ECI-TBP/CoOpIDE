@@ -25,4 +25,6 @@ public interface IDEServices {
     
     void createUser(String username) throws IDEException;
     
+    String getFile(String filename);
+    
 }
