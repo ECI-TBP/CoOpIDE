@@ -3,7 +3,7 @@
 ### CircleCI [![CircleCI](https://circleci.com/gh/ECI-TBP/CoOpIDE/tree/master.svg)](https://circleci.com/gh/ECI-TBP/CoOpIDE/tree/master)
 
 ### [Historias de usuario](https://trello.com/b/6I6X8uX3/arsw-2018-1-proyecto-historiasdeusuario)
-### [URL Aplicación Heroku](http://coopide.herokuapp.com/)
+### [URL Aplicación Heroku](http://coopide.herokuapp.com/home.html)
 
 ### Integrantes
 * Alejandra Gómez
