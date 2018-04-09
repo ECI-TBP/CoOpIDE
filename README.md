@@ -2,7 +2,8 @@
 ### Codacy [![Codacy Badge](https://api.codacy.com/project/badge/Grade/423687c134604885a141fc66641610dd)](https://www.codacy.com/app/miloac/CoOpIDE?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ECI-TBP/CoOpIDE&amp;utm_campaign=Badge_Grade)
 ### CircleCI [![CircleCI](https://circleci.com/gh/ECI-TBP/CoOpIDE/tree/master.svg)](https://circleci.com/gh/ECI-TBP/CoOpIDE/tree/master)
 
-### [Historias de usuario] (https://trello.com/b/6I6X8uX3/arsw-2018-1-proyecto-historiasdeusuario)
+### [Historias de usuario](https://trello.com/b/6I6X8uX3/arsw-2018-1-proyecto-historiasdeusuario)
+### [URL Aplicación Heroku](http://coopide.herokuapp.com/)
 
 ### Integrantes
 * Alejandra Gómez
