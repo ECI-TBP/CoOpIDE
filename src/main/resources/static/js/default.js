@@ -1,16 +1,17 @@
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/dracula");
-editor.session.setMode("ace/mode/java");
+editor.session.setMode("ace/mode/javascript");
+editor.on('change', function() { textCapture() });
 
 function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
-    stompClient.send("/topic/file", {}, text);
-    //axios.put('file', text).then(function (response){
+    stompClient.send("/topic/file/default", {}, text);
+    axios.put('default', text).then(function (response){
         
-    //}).catch(function (error) {
-    //    alert("error:"+error);
-    //});
+    }).catch(function (error) {
+        alert("error:"+error);
+    });
 }
 
 
