@@ -6,8 +6,8 @@ editor.on('change', function() { textCapture() });
 function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
-    stompClient.send("/topic/file/default", {}, text);
-    axios.put('default', text).then(function (response){
+    stompClient.send("/topic/file/default", {}, JSON.stringify(text));
+    axios.post('default', text).then(function (response){
         
     }).catch(function (error) {
         alert("error:"+error);
@@ -25,7 +25,7 @@ var connectAndSubscribe = function () {
         
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/file', function (eventbody) {
+            stompClient.subscribe('/topic/file/default', function (eventbody) {
                 
                 
             });
