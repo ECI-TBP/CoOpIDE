@@ -7,7 +7,7 @@ function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
     stompClient.send("/topic/file/default", {}, JSON.stringify(text));
-    axios.post('default', text).then(function (response){
+    axios.post('/file/default', ("default",text)).then(function (response){
         
     }).catch(function (error) {
         alert("error:"+error);

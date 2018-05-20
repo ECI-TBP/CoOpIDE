@@ -23,12 +23,18 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Juan Camilo Mantilla
  */
+@Service
 @RestController
 @RequestMapping(value = "/file")
 public class IDEController {
     
-    @Autowired
+    
     private IDEServices ideServ;
+    
+    @Autowired
+    public void setIDEServices(IDEServices ids) {
+        this.ideServ = ids;
+    }
     
     @RequestMapping(path = "/{filename}",method = RequestMethod.GET)
     public ResponseEntity<?> getFileContent(@PathVariable(name = "filename") String filename) {

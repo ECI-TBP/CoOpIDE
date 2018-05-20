@@ -20,6 +20,10 @@ public class IDEServicesStub implements IDEServices{
     private HashMap<String,String> filesMap;
     //private ArrayList<String> userList;
     
+    public IDEServicesStub(){
+        filesMap = new HashMap<String,String>();
+    }
+    
     
     @Override
     public void saveFile(String name, String file) {
