@@ -27,6 +27,7 @@ public class IDEServicesStub implements IDEServices{
     
     @Override
     public void saveFile(String name, String file) {
+        //file = file.substring(0, file.length() - 1);
         filesMap.put(name, file);
     }
 

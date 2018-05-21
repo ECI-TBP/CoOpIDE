@@ -21,9 +21,9 @@ public class STOMPMessagesHandler {
     SimpMessagingTemplate msgt;
 
 
-    @MessageMapping("/file/{name}")
+    @MessageMapping("/{name}")
     public void handleFileEvent(String text,@DestinationVariable String name) throws Exception {
         System.out.println("Nuevo caracter recibido");
-        msgt.convertAndSend("/topic/file/"+name, text);
+        msgt.convertAndSend("/topic/"+name, text);
     }
 }
