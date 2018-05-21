@@ -23,13 +23,18 @@ public class IDEWebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
+        config.enableStompBrokerRelay("/topic").setRelayHost("salamander.rmq.cloudamqp.com").setRelayPort(61613).
+            setClientLogin("qliubohm").
+            setClientPasscode("lJY-2f2bR78tFch97P9Iz8yHdgBGKocM").
+            setSystemLogin("qliubohm").
+            setSystemPasscode("lJY-2f2bR78tFch97P9Iz8yHdgBGKocM").
+setVirtualHost("qliubohm");
         config.setApplicationDestinationPrefixes("/app");        
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/stompendpoint").withSockJS();
+        registry.addEndpoint("/stompendpoint").setAllowedOrigins("*").withSockJS();
         
     }
     
