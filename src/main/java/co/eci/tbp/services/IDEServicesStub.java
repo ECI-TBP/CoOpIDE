@@ -27,7 +27,23 @@ public class IDEServicesStub implements IDEServices{
     
     @Override
     public void saveFile(String name, String file) {
-        file = file.substring(0, file.length() - 1);
+        if(file.endsWith("=")){
+            file = file.substring(0, file.length() - 1);
+        }
+        file = file.replace("%0A", "\n");;
+        file = file.replace("+", " ");
+        file = file.replace("%3B", ";");
+        file = file.replace("%3A", ":");
+        file = file.replace("%2C", ",");
+        file = file.replace("%28", "(");
+        file = file.replace("%29", ")");
+        file = file.replace("%7B", "{");
+        file = file.replace("%7D", "}");
+        file = file.replace("%3D", "=");
+        file = file.replace("%3F", "?");
+        file = file.replace("%2F", "/");
+        file = file.replace("%22", "\"");
+        file = file.replace("%27", "'");
         filesMap.put(name, file);
     }
 
