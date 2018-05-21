@@ -6,7 +6,7 @@ editor.on('change', function() { textCapture() });
 function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
-    stompClient.send("/topic/file/default", {}, JSON.stringify(text));
+    stompClient.send("/app/default", {}, JSON.stringify(text));
     
     axios.post('/file/default', ("default",text)).then(function (response){
         
@@ -26,7 +26,7 @@ var connectAndSubscribe = function () {
         
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/file/default', function (eventbody) {
+            stompClient.subscribe('/topic/default', function (eventbody) {
                 
             });
         });
