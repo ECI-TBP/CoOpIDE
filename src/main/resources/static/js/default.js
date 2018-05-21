@@ -1,16 +1,18 @@
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/dracula");
-editor.session.setMode("ace/mode/java");
+editor.session.setMode("ace/mode/javascript");
+editor.on('change', function() { textCapture() });
 
 function textCapture() {
     var text = editor.getValue();
     console.log(editor.getValue());
-    stompClient.send("/topic/file", {}, text);
-    //axios.put('file', text).then(function (response){
+    stompClient.send("/app/default", {}, JSON.stringify(text));
+    
+    axios.post('/file/default', ("default",text)).then(function (response){
         
-    //}).catch(function (error) {
-    //    alert("error:"+error);
-    //});
+    }).catch(function (error) {
+        alert("error:"+error);
+    });
 }
 
 
@@ -24,10 +26,16 @@ var connectAndSubscribe = function () {
         
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/file', function (eventbody) {
-                
+            stompClient.subscribe('/topic/default', function (eventbody) {
                 
             });
+        });
+        
+        
+        axios.get('/file/default').then(function (response){
+        editor.setValue(response.data);
+        }).catch(function (error) {
+            
         });
 
 };

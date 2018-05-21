@@ -13,18 +13,9 @@ import java.util.Set;
  */
 public interface IDEServices {
     
-    void saveFile(String file, String name);
+    void saveFile(String name, String file);
     
-    void loadFile(String name);
+    String loadFile(String name);
     
-    void updateCurrent(String file);
-    
-    Set<String> getFiles();
-    
-    boolean userExists(String username);
-    
-    void createUser(String username) throws IDEException;
-    
-    String getFile(String filename);
     
 }
