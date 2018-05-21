@@ -35,7 +35,7 @@ var connectAndSubscribe = function () {
         axios.get('/file/default').then(function (response){
         editor.setValue(response.data);
         }).catch(function (error) {
-            //alert("error:"+error+"hola");
+            
         });
 
 };
